@@ -3,7 +3,7 @@ class TeamsController < ApplicationController
     @team = Team.find params[:id]
     #@players = @team.players
     @players = []
-    @team.memberships.order(rank: :asc).each do |membership|
+    @team.memberships.order(rank: :asc).includes(:player).each do |membership|
       @players.push membership.player
     end
   end
