@@ -4,4 +4,6 @@ Rails.application.routes.draw do
       post :reorder
     end
   end
+
+  resources :players
 end

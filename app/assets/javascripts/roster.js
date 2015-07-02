@@ -21,6 +21,7 @@ $(document).on("ready", function() {
     var input = $(this).find(".name-input")
     var display = $(this).find(".name-text")
     var current_name = display.text()
+    var player_id = input.data("player-id")
       // $("<input type='text'>").val(current_name)
 
     input.val(current_name).show().focus()
@@ -30,8 +31,16 @@ $(document).on("ready", function() {
       display.text(input.val())
       input.hide()
       display.show()
-    })
 
-    console.log("name", current_name)
+      $.ajax("/players/" + player_id, {
+        method: "PATCH",
+        data: {
+          name: input.val()
+        },
+        error: function() {
+          alert("Failed to update player")
+        }
+      })
+    })
   })
 })
