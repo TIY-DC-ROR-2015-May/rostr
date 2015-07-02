@@ -8,7 +8,10 @@ $(document).on("ready", function() {
 
     $.ajax(window.location + "/reorder", {
       method: "POST",
-      data: sort_order
+      data: sort_order,
+      error: function() { 
+        alert("Mistakes were made")
+      }
     })
   })
 })
