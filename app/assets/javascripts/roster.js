@@ -1,4 +1,6 @@
 $(document).on("ready", function() {
+  $(".name-input").hide()
+
   $("#roster tbody").sortable()
 
   $("button").on("click", function() {
@@ -16,16 +18,18 @@ $(document).on("ready", function() {
   })
 
   $(".player-name").on("click", function() {
-    var current_name = $(this).text()
-    var input = $("<input type='text'>").val(current_name)
+    var input = $(this).find(".name-input")
+    var display = $(this).find(".name-text")
+    var current_name = display.text()
+      // $("<input type='text'>").val(current_name)
 
-    $(this).replaceWith(input)
-    input.focus()
+    input.val(current_name).show().focus()
+    display.hide()
 
     input.on("blur", function() {
-      var updated_name = $(this).val()
-      $(this).replaceWith(updated_name)
-      alert(updated_name)
+      display.text(input.val())
+      input.hide()
+      display.show()
     })
 
     console.log("name", current_name)

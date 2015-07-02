@@ -10,7 +10,10 @@
   <tbody>
     <% @players.each do |player| %>
       <tr id="player_id_<%= player.id %>">
-        <td class="player-name"><%= player.name %></td>
+        <td class="player-name">
+          <span class="name-text"><%= player.name %></span>
+          <input class="name-input" type="text">
+        </td>
       </tr>
     <% end %>
   </tbody>
