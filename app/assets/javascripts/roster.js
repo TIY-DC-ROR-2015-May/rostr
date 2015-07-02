@@ -38,6 +38,7 @@ $(document).on("ready", function() {
           name: input.val()
         },
         error: function() {
+          display.text(current_name)
           alert("Failed to update player")
         }
       })
