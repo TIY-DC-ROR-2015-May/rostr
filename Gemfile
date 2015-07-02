@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.2.0'
 
 gem 'rails', '4.2.2'
 gem 'sass-rails', '~> 5.0'
@@ -15,8 +16,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twitter-bootstrap-rails'
 gem 'quiet_assets'
 
+gem 'faker'
+
 group :development, :test do
-  gem 'faker'
   gem 'pry-rails'
   gem 'spring'
   gem 'sqlite3'
@@ -24,4 +26,5 @@ end
 
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
