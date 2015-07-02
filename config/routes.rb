@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :teams
+  resources :teams do
+    post :reorder
+  end
 end

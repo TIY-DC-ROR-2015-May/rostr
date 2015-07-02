@@ -9,9 +9,11 @@
 
   <tbody>
     <% @team.players.each do |player| %>
-      <tr>
+      <tr id="player_<%= player.id %>">
         <td><%= player.name %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<button class="btn btn-default">Save!</button>
